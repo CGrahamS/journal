@@ -17,3 +17,5 @@ Entry.prototype.consonants = function() {
   var consonants = this.body.match(/[^aeiouAEIOU\s\d\W\_]/g);
   return consonants.length;
 };
+
+exports.entryModule = Entry;
