@@ -20,7 +20,7 @@
 
 ## Setup/Installation Requirements
 
-1. Clone this repository to your desktop `git clone `
+1. Clone this repository to your desktop `git clone https://github.com/CGrahamS/journal.git`
 
 ## Known Bugs
 
