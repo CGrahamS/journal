@@ -1,8 +1,8 @@
 # _Journal_
 
-### _Epicodus: JavaScript Week 4, Advanced Java Topics: Independent Project_
+### _Epicodus: JavaScript (Week 1: Monday)_
 
-#### By _[**Caleb Stevenson**](https://github.com/CGrahamS), [**Katrina Hirsch**](https://github.com/khirsch)_
+#### By _[**Caleb Stevenson**](https://github.com/CGrahamS) &amp; [**Katrina Hirsch**](https://github.com/khirsch)_
 
 ## Description
 
