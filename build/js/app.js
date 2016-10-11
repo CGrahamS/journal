@@ -25,6 +25,38 @@ Entry.prototype.consonants = function() {
 exports.entryModule = Entry;
 
 },{}],3:[function(require,module,exports){
+var apiKey = require('./../.env').apiKey;
+
+Weather = function(){
+}
+
+Weather.prototype.getWeather = function(city) {
+  $.get('http://api.openweathermap.org/data/2.5/weather?q=' + city + '&appid=' + apiKey).then(function(response){
+    $('.showWeather').text("The humidity in " + city + " is " + response.main.humidity + "%");
+  }).fail(function(error){
+    $('.showWeather').text(error.responseJSON.message);
+  });
+}
+
+exports.weatherModule = Weather;
+
+//CALLBACK FUNCTION
+// var apiKey = require('./../.env').apiKey;
+//
+// Weather = function(){
+// }
+//
+// Weather.prototype.getWeather = function(city, displayFunction) {
+//   $.get('http://api.openweathermap.org/data/2.5/weather?q=' + city + '&appid=' + apiKey).then(function(response){
+//     displayFunction(city, response.main.humidity);
+//   }).fail(function(error){
+//     $('.showWeather').text(error.responseJSON.message);
+//   });
+// }
+//
+// exports.weatherModule = Weather;
+
+},{"./../.env":1}],4:[function(require,module,exports){
 var Entry = require('./../js/entry.js').entryModule;
 
 $(document).ready(function() {
@@ -54,18 +86,31 @@ $(document).ready(function() {
   });
 });
 
-var apiKey = require('./../.env').apiKey;
+var Weather = require('./../js/weather.js').weatherModule;
 
 $(document).ready(function(){
+  var currentWeatherObject = new Weather();
   $('#weatherLocation').click(function(){
     var city = $('#location').val();
     $('#location').val("");
-    $.get('http://api.openweathermap.org/data/2.5/weather?q=' + city + '&appid=' + apiKey).then(function(response){
-      $('.showWeather').text("The humidity in " + city + " is " + response.main.humidity + "%.");
-    }).fail(function(error){
-      $('.showWeather').text(error.responseJSON.message);
-    });
+    currentWeatherObject.getWeather(city);
   });
 });
 
-},{"./../.env":1,"./../js/entry.js":2}]},{},[3]);
+//CALLBACK FUNCTION
+// var Weather = require('./../js/weather.js').weatherModule;
+//
+// var displayHumidity = function(city, humdityData) {
+//   $('.showWeather').text("The humidity in " + city + " is " + humidityData + "%");
+// }
+//
+// $(document).ready(function(){
+//   var currentWeatherObject = new Weather();
+//   $('#weatherLocation').click(function(){
+//     var city = $('#location').val();
+//     $('#location').val("");
+//     currentWeatherObject.getWeather(city, displayHumidity);
+//   });
+// });
+
+},{"./../js/entry.js":2,"./../js/weather.js":3}]},{},[4]);
