@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <script src="build/js/app.js" type="text/javascript"></script>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" type="text/css">
-    <link href="css/styles.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="build/css/vendor.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="build/js/vendor.min.js"></script>
+    <script type="text/javascript" src="build/js/app.js"></script>
     <title>Journal</title>
   </head>
   <body>
@@ -22,16 +22,11 @@
           </form>
           <div id="display">
             <h3 id="display-title"></h3>
+            <p id="time"></p>
             <p id="display-body"></p>
-            <form id="words">
-                <button type="submit">Count Words</button>
-            </form>
-            <form id="vowels">
-              <button type="submit">Count Vowels</button>
-            </form>
-            <form id="consonants">
-              <button type="submit">Count Consonants</button>
-            </form>
+            <button type="button" id="words">Count Words</button>
+            <button type="button" id="vowels">Count Vowels</button>
+            <button type="button" id="consonants">Count Consonants</button>
             <p><span id="count"></span></p>
           </div>
         </div>
