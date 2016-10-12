@@ -1,4 +1,7 @@
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
+exports.apiKey = "353e2b01370cd525baed0499028f5d14";
+
+},{}],2:[function(require,module,exports){
 function Entry(title, body) {
   this.title = title;
   this.body = body;
@@ -21,7 +24,39 @@ Entry.prototype.consonants = function() {
 
 exports.entryModule = Entry;
 
-},{}],2:[function(require,module,exports){
+},{}],3:[function(require,module,exports){
+var apiKey = require('./../.env').apiKey;
+
+Weather = function(){
+}
+
+Weather.prototype.getWeather = function(city) {
+  $.get('http://api.openweathermap.org/data/2.5/weather?q=' + city + '&appid=' + apiKey).then(function(response){
+    $('.showWeather').text("The humidity in " + city + " is " + response.main.humidity + "%");
+  }).fail(function(error){
+    $('.showWeather').text(error.responseJSON.message);
+  });
+}
+
+exports.weatherModule = Weather;
+
+//CALLBACK FUNCTION
+// var apiKey = require('./../.env').apiKey;
+//
+// Weather = function(){
+// }
+//
+// Weather.prototype.getWeather = function(city, displayFunction) {
+//   $.get('http://api.openweathermap.org/data/2.5/weather?q=' + city + '&appid=' + apiKey).then(function(response){
+//     displayFunction(city, response.main.humidity);
+//   }).fail(function(error){
+//     $('.showWeather').text(error.responseJSON.message);
+//   });
+// }
+//
+// exports.weatherModule = Weather;
+
+},{"./../.env":1}],4:[function(require,module,exports){
 var Entry = require('./../js/entry.js').entryModule;
 
 $(document).ready(function() {
@@ -51,16 +86,31 @@ $(document).ready(function() {
   });
 });
 
-var apiKey = "1e606e9a8ff6190e7e85bf2ff1aa63e2";
+var Weather = require('./../js/weather.js').weatherModule;
 
-$(function() {
-  $('#weatherLocation').click(function() {
-    var city =$('#location').val();
+$(document).ready(function(){
+  var currentWeatherObject = new Weather();
+  $('#weatherLocation').click(function(){
+    var city = $('#location').val();
     $('#location').val("");
-    $.get('http://api.openweathermap.org/data/2.5/weather?q=' + city + '&appid=' + apiKey).then(function(response) {
-      $('.showWeather').text("The humidity in " + city + " is " + response.main.humidity + "%!");
-    });
+    currentWeatherObject.getWeather(city);
   });
 });
 
-},{"./../js/entry.js":1}]},{},[2]);
+//CALLBACK FUNCTION
+// var Weather = require('./../js/weather.js').weatherModule;
+//
+// var displayHumidity = function(city, humdityData) {
+//   $('.showWeather').text("The humidity in " + city + " is " + humidityData + "%");
+// }
+//
+// $(document).ready(function(){
+//   var currentWeatherObject = new Weather();
+//   $('#weatherLocation').click(function(){
+//     var city = $('#location').val();
+//     $('#location').val("");
+//     currentWeatherObject.getWeather(city, displayHumidity);
+//   });
+// });
+
+},{"./../js/entry.js":2,"./../js/weather.js":3}]},{},[4]);

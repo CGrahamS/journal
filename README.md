@@ -1,8 +1,8 @@
 # _Journal_
 
-### _Epicodus: JavaScript (Week 1: Monday)_
+### _Epicodus: JavaScript (Week 1: Tuesday)_
 
-#### By _[**Caleb Stevenson**](https://github.com/CGrahamS) &amp; [**Katrina Hirsch**](https://github.com/khirsch)_
+#### By _[**Caleb Stevenson**](https://github.com/CGrahamS) &amp; [**Megan Kaluza**](https://github.com/megankaluza)_
 
 ## Description
 
@@ -29,7 +29,7 @@ _NONE_
 ## Support and contact details
 
 Caleb Stevenson: _cgrahamstevenson@gmail.com_
-Katrina Hirsch: _katrina.hirsch@gmail.com_
+Megan Kaluza: _megan.kaluza@gmail.com_
 
 ## Technologies Used
 
@@ -42,4 +42,4 @@ Node_
 
 This webpage is licensed under the GPL license.
 
-Copyright &copy; 2016 **_Caleb Stevenson &amp; Katrina Hirsch_**
+Copyright &copy; 2016 **_Caleb Stevenson &amp; Megan Kaluza_**
