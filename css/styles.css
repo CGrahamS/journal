@@ -5,3 +5,11 @@
 #entry {
   margin-top: 5%;
 }
+
+#title {
+  width: 50%;
+}
+
+#body {
+  height: 200px;
+}

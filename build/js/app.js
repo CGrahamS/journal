@@ -51,4 +51,16 @@ $(document).ready(function() {
   });
 });
 
+var apiKey = "1e606e9a8ff6190e7e85bf2ff1aa63e2";
+
+$(function() {
+  $('#weatherLocation').click(function() {
+    var city =$('#location').val();
+    $('#location').val("");
+    $.get('http://api.openweathermap.org/data/2.5/weather?q=' + city + '&appid=' + apiKey).then(function(response) {
+      $('.showWeather').text("The humidity in " + city + " is " + response.main.humidity + "%!");
+    });
+  });
+});
+
 },{"./../js/entry.js":1}]},{},[2]);
