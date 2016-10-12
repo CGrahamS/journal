@@ -27,23 +27,6 @@ $(document).ready(function() {
   });
 });
 
-<<<<<<< HEAD
-var apiKey = 
-
-$(function() {
-  $('#weatherLocation').click(function() {
-    var city =$('#location').val();
-    $('#location').val("");
-    $.get('http://api.openweathermap.org/data/2.5/weather?q=' + city + '&appid=' + apiKey).then(function(response) {
-      console.log(response);
-      $('.showWeather').text("The humidity in " + city + " is " + response.main.humidity + "%!");
-    }).fail(function(error) {
-      $('.showWeather').text(error.responseJSON.message);
-    })
-    });
-  });
-});
-=======
 var Weather = require('./../js/weather.js').weatherModule;
 
 $(document).ready(function(){
@@ -70,4 +53,3 @@ $(document).ready(function(){
 //     currentWeatherObject.getWeather(city, displayHumidity);
 //   });
 // });
->>>>>>> 082506554820d10720503dd2bb6ac9991b535bd0

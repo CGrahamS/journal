@@ -1,12 +1,6 @@
 node_modules/
-<<<<<<< HEAD
-build/
-tmp/
-.DS_Store
-=======
 .DS_Store
 bower_components/
 build/
 tmp/
->>>>>>> 082506554820d10720503dd2bb6ac9991b535bd0
 .env

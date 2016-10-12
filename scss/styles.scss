@@ -1,0 +1,21 @@
+$gray : #d3d3d3;
+$green : #75B975;
+
+.box {
+  margin-top: 5%;
+  background: lightblue;
+  border: 3px solid black;
+  border-radius: 20px;
+  padding: 20px 80px;
+  .button {
+    font-weight: bold;
+    text-align: center;
+    background: tomato;
+    color: white;
+    border-radius: 20px;
+  }
+  .showWeather {
+    font-style: italic;
+    margin-top: 2.5%;
+  }
+}
